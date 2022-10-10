@@ -7,7 +7,7 @@ npm start //runs web app on localhost 3000
 npm test //runs tests
 
 Function overview:
-App.js is rendered comtaining Main.js, which renders user information using Users.js and User.js. Each user links to a seperate page which displays more reward and transaction info with UserPage.js. 
+App.js is rendered containing Main.js, which renders user information using Users.js and User.js. Each user links to a seperate page which displays more reward and transaction info with UserPage.js. 
 
 Data is mocked with js files under the api folder. GET.js exports an object with dummy data similar to what would be received as an HTTP data object. GetByID.js exports a function find() which when given a dataset and id returns the object with the given id, which is meant to mock a database query at a GET by id endpoint. 
 
