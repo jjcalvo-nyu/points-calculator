@@ -108,7 +108,7 @@ const UserPage = () => {
     return(
         <div>
             <Link to = '/'>Return</Link> 
-            <h1>{user.name}</h1>
+            <h1 data-testid='name-header'>{user.name}</h1>
             <h2>Total points: {user.points}</h2>
             <h3>{groupedMonthlyPoints.currentMonth.monthName} points: {groupedMonthlyPoints.currentMonth.points}</h3>
             <h3>{groupedMonthlyPoints.previousMonth.monthName} points: {groupedMonthlyPoints.previousMonth.points}</h3>
@@ -124,7 +124,7 @@ const UserPage = () => {
             </tr>
             {user.transactions.map(i => (
                 <tr>
-                <td>{i.purchase}</td>
+                <td data-testid='transaction'>{i.purchase}</td>
                 <td>Amount spent: ${i.cost}</td>
                 <td>Points gained: {i.points}</td>
                 <td>{i.date}</td>
