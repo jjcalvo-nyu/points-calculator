@@ -1,10 +1,12 @@
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
 import Main from './components/Main'
 
 function App() {
   return (
-    <div className="App">
-      <Main />
+    <div>
+      <Routes>
+      <Route exact path = '/' element={<Main />} />
+      </Routes>
     </div>
   );
 }

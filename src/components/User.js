@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const User = (props) => {
     return (
         <div>
-            <p>{props.i.name}</p>
+            <Link to={`/users/${props.i.id}`}>{props.i.name} </Link>
             <p>Rewards: {props.i.points} Points</p>
         </div>
     )
