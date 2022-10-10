@@ -5,7 +5,7 @@ const User = (props) => {
     return (
         <div>
             <Link to={`/user/${props.i.id}`}>{props.i.name} </Link>
-            <p>Rewards: {props.i.points} Points</p>
+            <p>Total Rewards: {props.i.points} Points</p>
         </div>
     )
 }
