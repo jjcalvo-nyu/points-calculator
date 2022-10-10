@@ -26,7 +26,7 @@ const user2 = {
      ]
  }
 
- const user3 = {
+const user3 = {
     id: 3,
     name: 'Name 3',
     transactions: [
@@ -43,7 +43,7 @@ const user2 = {
      ]
  }
 
- const user4 = {
+const user4 = {
     id: 4,
     name: 'Name 4',
     transactions: [
@@ -56,7 +56,7 @@ const user2 = {
      ]
  }
  
- const user5 = {
+const user5 = {
     id: 5,
     name: 'Name 5',
     transactions: [
@@ -71,7 +71,7 @@ const user2 = {
       ]
   }
  
-  const user6 = {
+const user6 = {
     id: 6, 
     name: 'Name 6',
     transactions: [
@@ -88,4 +88,16 @@ const user2 = {
       ]
   }
 
-  export const data = [user1, user2, user3, user4, user5, user6]
+const data = [user1, user2, user3, user4, user5, user6]
+
+const find = (id) => {
+    let userByID = {}
+    for (let i = 0; i < data.length; i++){
+        if (data[i].id === id){
+        userByID = data[i]
+        }
+    }
+    return userByID
+}
+
+export default find
