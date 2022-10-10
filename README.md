@@ -1,6 +1,9 @@
 To run using bash terminal: 
+
 npm install //installs dependencies
+
 npm start //runs web app on localhost 3000
+
 npm test //runs tests
 
 Function overview:
@@ -13,4 +16,4 @@ In Main.js, Users.js calculates total points for each user using the data import
 Additionally simple tests are ran to ensure proper rendering and validate data is rendered properly.
 
 
-Ways to improve this app would be better styling, more rigorous testing, and more features such as data filters or functionality surrounding transaction/point history extending beyond the 3-month range.
+Ways to improve this app would be better styling, more rigorous testing, and more features such as data filters and other search fucntions, or functionality surrounding transaction/point history extending beyond the 3-month range.
