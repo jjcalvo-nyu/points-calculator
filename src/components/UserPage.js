@@ -13,22 +13,24 @@ const UserPage = () => {
         for (let i = 0; i < transactions.length; i++){
             const cost = transactions[i].cost
             if (cost < 50) {
-            } else if (cost < 100 || cost === 100) {
+                points = points + 0
+            } else if ((cost > 50 && cost < 100) || cost === 100) {
                 points = points + (cost - 50)
                 user.transactions[i].points = (cost - 50).toFixed(2)
-            } else {
+            } else if (cost > 100){
                 points = points + ((cost - 100)*2)
-                user.transactions[i].points = ((cost - 100)*2).toFixed(2)
+                points = points + ((cost - (cost - 100)) - 50)
+                user.transactions[i].points = ((cost - 100)*2)
+                user.transactions[i].points = (user.transactions[i].points + ((cost - (cost - 100)) - 50)).toFixed(2)
             }
         }
         return points
     }
     user.points = calcPoints(user).toFixed(2)
-    console.log(user)
     return(
         <div>
-            <p>{user.name}</p>
-            <p>{user.points}</p>
+            <h1>{user.name}</h1>
+            <h3>Total points: {user.points}</h3>
             {user.transactions.map(i => (
                 <Transaction i={i} />
             ))}

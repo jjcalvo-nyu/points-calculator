@@ -9,12 +9,13 @@ const Users = () => {
         let points = 0
         for (let i = 0; i < transactions.length; i++){
             const cost = transactions[i].cost
-            
             if (cost < 50) {
-            } else if (cost < 100 || cost === 100) {
+                points = points + 0
+            } else if ((cost > 50 && cost < 100) || cost === 100) {
                 points = points + (cost - 50)
-            } else {
+            } else if (cost > 100){
                 points = points + ((cost - 100)*2)
+                points = points + ((cost - (cost - 100)) - 50)
             }
         }
         return points
