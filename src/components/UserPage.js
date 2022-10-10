@@ -1,7 +1,8 @@
 import find from '../api/GETbyID'
 import * as data from '../api/GET'
 import React from 'react'
-import Transaction from './Transaction'
+import { Link } from 'react-router-dom'
+import '../styles/UserPage.css'
 
 const UserPage = () => {
     const dataArray = data.data
@@ -14,6 +15,7 @@ const UserPage = () => {
             const cost = transactions[i].cost
             if (cost < 50) {
                 points = points + 0
+                user.transactions[i].points = 0
             } else if ((cost > 50 && cost < 100) || cost === 100) {
                 points = points + (cost - 50)
                 user.transactions[i].points = (cost - 50).toFixed(2)
@@ -29,11 +31,23 @@ const UserPage = () => {
     user.points = calcPoints(user).toFixed(2)
     return(
         <div>
+            <Link to = '/'>Return</Link> 
             <h1>{user.name}</h1>
             <h3>Total points: {user.points}</h3>
+            <table>
+            <tr>
+                <th>Purchase</th>
+                <th>Amount</th>
+                <th>Points</th>
+            </tr>
             {user.transactions.map(i => (
-                <Transaction i={i} />
+                <tr>
+                <td>{i.purchase}</td>
+                <td>Amount spent: ${i.cost}</td>
+                <td>Points gained: {i.points}</td>
+            </tr>
             ))}
+            </table>
         </div>
     )
 }
